@@ -2,14 +2,15 @@ function startApp() {
 
   //DOM Manipulation
   const input = document.getElementById('phone-num')
-
+  
+// Array to store all Nigerian number prefixes
   const airtel = ["0802", "0808", "0812", "0708", "0701", "0902", "0901", "0907"];
   const glo = ["0805", "0807", "0811", "0815", "0705", "0905"];
   const mtn = ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"];
   const nineMobile = ["0809", "0817", "0818", "0908", "0909"];
 
 
-  // Array to store all Nigerian number prefixes
+  
   let prefixStore = airtel.concat(glo, mtn, nineMobile);
 
   input.addEventListener('input', (e) => {
@@ -19,7 +20,7 @@ function startApp() {
   });
 }
 
-/* === Verify phone number function === */
+// Check phone number
 
 function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
 
@@ -30,7 +31,7 @@ function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
   let numberLength;
   let countryCode;
 
-  const img = document.getElementById("provider");
+  const img = document.getElementById('provider');
 
   if (phoneNum[0] === "0") {
     prefix = phoneNum.slice(0, 4);

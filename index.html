@@ -11,40 +11,47 @@
 </head>
 
 <body>
-  <main>
-    <!-- used a main div to wrap it (qudus, chinaza, Ethel) -->
+  <main class="main">
     <div class="main-div">
       <!-- There are two sections, one for the image and one for the form, we used a div to wrap the two sections (qudus, chinaza, Ethel) -->
       <section class="background-pic">
-        <img class="img_class" src="images/main_img.png" alt="man sitting by desk" />
+        <img class="img_class" src="./images/Casual life 3D - 300.png" alt="man sitting by desk" />
       </section>
-      <section>
+      <section class="card">
         <div>
-          <img src="images/logo.png" alt="logo" />
-        </div>
-        <div>
-          <form action="">
-            <input type="text" class="first_Name" placeholder="First Name" required />
-            <input type="text" class="last_Name" placeholder="Last Name" required />
-            <input type="email" class="email" placeholder="Email Address" required />
+          <!-- added a div and class 'logo' to wrap image(John Ekunola) -->
+          <div class="logo">
+            <img src="./images/logo.png" class="logo" alt="">
+          </div>
+          <!-- added a class 'box' to wrap image(John Ekunola) -->
+          <form action="l">
+            <input type="text" class="first_Name box" placeholder="First Name" required />
+            <input type="text" class="last_Name box" placeholder="Last Name" required />
+            <input type="email" class="email box" placeholder="Email Address" required />
 
-            <input type="phone" class="phone_number" id="phone-num" placeholder="Phone Number" required />
+            <select class="box" name="Phone Numer" id="phone_number">
+              <option value="">+234</option>
+              <option value="">+233</option>
+            </select><input type="phone" class="phone_number box" id="phone-num" placeholder="Phone Number" required />
 
-            <!-- the span is for the network image (qudus, chinaza, Ethel) -->
-            <span id="provider"></span>
-            <!-- the span is for the network image (qudus, chinaza, Ethel) -->
-
-            <input type="password" class="password" placeholder="Password" required />
-            <input type="password" class="confirm_password" placeholder="Confirm Password" required />
+            <input type="password" class="password box" placeholder="Password" required />
+            <input type="password" class="confirm_password box" placeholder="Confirm Password" required />
           </form>
         </div>
-        <div>
-          <input type="checkbox" name="" id="checkbox" />
+        <div class="label">
           <label for="checkbox">Agree to our terms and conditions</label>
+          <input type="checkbox" name="" id="checkbox" />
         </div>
 
-        <button>Create account</button>
-        <p>or</p>
+        <!-- the span is for the network image (qudus, chinaza, Ethel) -->
+        <div class="provider-logo">
+          <span id="provider"></span>
+        </div>
+        <!-- the span is for the network image (qudus, chinaza, Ethel) -->
+
+        <!-- added a id 'btn' to wrap image(John Ekunola) -->
+        <button id="btn">Create account</button>
+        <p class="">or</p>
         <div class="social_icon">
           <img src="images/facebook_img.png" alt="Facebook Logo" />
           <img src="images/google_img.png" alt="Google Logo" />
@@ -55,10 +62,9 @@
     </div>
   </main>
 
-
   <!-- // ============= EEND DO NOT EDIT ============== // -->
-  <script src="index.mjs" type="module"></script>
+  <script src="/app.mjs" type="module"></script>
   <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
 
-</html> 
+</html>
