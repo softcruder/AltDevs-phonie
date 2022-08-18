@@ -1,9 +1,7 @@
 function startApp() {
 
   //DOM Manipulation
-  const input = document.getElementById('phone-num');
-  const img = document.getElementById('provider');
-  const msg = document.getElementById('message')
+  const input = document.getElementById('phone-num')
 
   const airtel = ["0802", "0808", "0812", "0708", "0701", "0902", "0901", "0907"];
   const glo = ["0805", "0807", "0811", "0815", "0705", "0905"];
@@ -53,7 +51,7 @@ function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
   // Logo display
   if (invalidNumber) {
     img.src = "";
-  } else if (AIRTEL.includes(prefix)) {
+  } else if (airtel.includes(prefix)) {
     img.src = "/images/logo-airtel.svg";
   } else if (glo.includes(prefix)) {
     img.src = "/images/logo-glo.svg";

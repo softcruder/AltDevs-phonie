@@ -28,7 +28,7 @@
     box-sizing: border-box;
 }
 
-.main-div {
+main {
     display: flex;
     width: auto;
     margin: 10px;
