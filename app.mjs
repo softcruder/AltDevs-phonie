@@ -13,7 +13,7 @@ function startApp() {
   
   let prefixStore = airtel.concat(glo, mtn, nineMobile);
 
-  input.addEventListener('input', (e) => {
+  input.addEventListener('change', (e) => {
     let phoneNum = e.target.value;
 
     checkNumber(phoneNum, airtel, glo, mtn, nineMobile);
@@ -31,42 +31,50 @@ function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
   let numberLength;
   let countryCode;
 
-  const img = document.getElementById('provider');
-
-  if (phoneNum[0] === "0") {
-    prefix = phoneNum.slice(0, 4);
-    numberLength = 11;
-  } else if (phoneNum[0] === "+") {
+  const img = document.getElementById("provider");
+  let img_src
+  //console.log("checkNumber", phoneNum)
+  if (phoneNum[0] === "+") {
     numberLength = 14;
     countryCode = phoneNum.slice(0, 4);
-    if (phoneNum[4] === "0") {
-      prefix = phoneNum.slice(4, 8);
-      numberLength = 15;
-    } else {
-      prefix = "0" + phoneNum.slice(4, 7);
-    };
+    prefix = phoneNum.slice(4, 7)
+    prefix = `0${prefix}`
+  } else {
+    prefix = phoneNum.slice(0, 4);
+    numberLength = 11;
+    /*  if (phoneNum[4] === "0") {
+       prefix = phoneNum.slice(4, 8);
+       //numberLength = 15;
+     } else {
+       prefix = "0" + phoneNum.slice(4, 7);
+     }; */
   };
 
   const invalidNumber = (phoneNum.length > numberLength) || (phoneNum.length >= 4 && countryCode !== "+234" && phoneNum[0] === "+");
 
   // Logo display
+
   if (invalidNumber) {
-    img.src = "";
+    img_src = "";
   } else if (airtel.includes(prefix)) {
-    img.src = "/images/logo-airtel.svg";
+    img_src = "/images/logo-airtel.svg";
   } else if (glo.includes(prefix)) {
-    img.src = "/images/logo-glo.svg";
+    img_src = "/images/logo-glo.svg";
   } else if (mtn.includes(prefix)) {
-    img.src = "/images/logo-mtn.svg";
+    img_src = "/images/logo-mtn.svg";
   } else if (nineMobile.includes(prefix)) {
-    img.src = "images/logo-9mobile.svg";
+    img_src = "/images/logo-9mobile.svg";
   };
+  console.log("img::", img);
+  const nase_img = document.createElement('IMG');
+  nase_img.setAttribute('src', img_src);
+  nase_img.setAttribute('width', 50);
+  nase_img.setAttribute('height', 30)
+  img.appendChild(nase_img)
+
+  /* img.innerHTML = `<img style="width: 50px; height: 30px;" src = ${img_src}/>` */
 };
 
-function check(imgPath) {
-  img.style.display = 'inline';
-  img.src = imgPath
-}
 // ======= DO NOT EDIT ============== //
 export default startApp;
-  // ======= EEND DO NOT EDIT ========= //
+  // ======= EEND DO NOT EDIT ========= /
