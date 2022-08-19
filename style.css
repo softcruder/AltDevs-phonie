@@ -28,6 +28,11 @@
     box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: #66fff5;
+}
+
 .main-div {
     display: flex;
     width: auto;
@@ -102,6 +107,11 @@ form {
     outline: none;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.provider-logo{
+  background-color: inherit;
+  border-radius: 5px;
 }
 
 #btn {
