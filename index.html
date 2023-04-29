@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phonie | AltDevs</title>
+  <title>Phonie | By AltDevs</title>
 
   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <main class="main">
+  <main>
     <div class="main-div">
       <!-- There are two sections, one for the image and one for the form, we used a div to wrap the two sections (qudus, chinaza, Ethel) -->
       <section class="background-pic">
@@ -28,7 +28,19 @@
             <input type="text" class="first_Name box" placeholder="First Name" required />
             <input type="text" class="last_Name box" placeholder="Last Name" required />
             <input type="email" class="email box" placeholder="Email Address" required />
-            <input type="phone" class="phone_number box" id="phone-num" placeholder="Phone Number" required />
+            <label for="phone-num">Phone Number:</label>
+            <input type="text" id="phone-num" pattern="(0802|0808|0812|0708|0701|0902|0901|0907)" list="prefixes" required>
+              <datalist id="prefixes">
+                <option value="0802">
+                <option value="0808">
+                <option value="0812">
+                <option value="0708">
+                <option value="0701">
+                <option value="0902">
+                <option value="0901">
+                <option value="0907">
+              </datalist>
+
             <!-- the span is for the network image (qudus, chinaza, Ethel) -->
              <span id="provider"></span>
             <!-- the span is for the network image (qudus, chinaza, Ethel) -->

@@ -32,25 +32,22 @@ function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
   let countryCode;
 
   const img = document.getElementById("provider");
-  let img_src
-  //console.log("checkNumber", phoneNum)
+  let img_src;
+
+  // Check if the phone number starts with a valid country code
   if (phoneNum[0] === "+") {
     numberLength = 14;
     countryCode = phoneNum.slice(0, 4);
-    prefix = phoneNum.slice(4, 7)
-    prefix = `0${prefix}`
+    prefix = phoneNum.slice(4, 7);
+    prefix = `0${prefix}`;
   } else {
+    // Default country code is Nigeria (+234)
+    countryCode = "+234";
     prefix = phoneNum.slice(0, 4);
     numberLength = 11;
-    /*  if (phoneNum[4] === "0") {
-       prefix = phoneNum.slice(4, 8);
-       //numberLength = 15;
-     } else {
-       prefix = "0" + phoneNum.slice(4, 7);
-     }; */
   };
 
-  const invalidNumber = (phoneNum.length > numberLength) || (phoneNum.length >= 4 && countryCode !== "+234" && phoneNum[0] === "+");
+  const invalidNumber = (phoneNum.length > numberLength);
 
   // Logo display
 
@@ -58,22 +55,29 @@ function checkNumber(phoneNum, airtel, glo, mtn, nineMobile) {
     img_src = "";
   } else if (airtel.includes(prefix)) {
     img_src = "/images/logo-airtel.svg";
+    countryCode = "+234";
   } else if (glo.includes(prefix)) {
     img_src = "/images/logo-glo.svg";
+    countryCode = "+234";
   } else if (mtn.includes(prefix)) {
     img_src = "/images/logo-mtn.svg";
+    countryCode = "+234";
   } else if (nineMobile.includes(prefix)) {
     img_src = "/images/logo-9mobile.svg";
+    countryCode = "+234";
+  } else {
+    img_src = "";
   };
-  console.log("img::", img);
-  const nase_img = document.createElement('IMG');
-  nase_img.setAttribute('src', img_src);
-  nase_img.setAttribute('width', 50);
-  nase_img.setAttribute('height', 30)
-  img.appendChild(nase_img)
+  
+  // Set the source of the image element based on the logo URL
+  img.setAttribute("src", img_src);
 
-  /* img.innerHTML = `<img style="width: 50px; height: 30px;" src = ${img_src}/>` */
+  // Show the country code next to the phone number input
+  const countryCodeElement = document.getElementById("country-code");
+  countryCodeElement.textContent = countryCode;
+
 };
+
 
 // ======= DO NOT EDIT ============== //
 export default startApp;
