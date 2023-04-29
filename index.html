@@ -12,24 +12,21 @@
 
 <body>
   <main>
+    <!-- // ============= START DO NOT EDIT ============== // -->
+    <!-- added a div and class 'logo' to wrap image with class logo-img(John Ekunola) -->
+    <div class="logo">
+      <img src="./images/logo.png" class="logo-img" alt="">
+    </div>
     <div class="main-div">
-      <!-- There are two sections, one for the image and one for the form, we used a div to wrap the two sections (qudus, chinaza, Ethel) -->
-      <section class="background-pic">
-        <img class="img_class" src="./images/Casual life 3D - 300.png" alt="man sitting by desk" />
-      </section>
       <section class="card">
         <div>
-          <!-- added a div and class 'logo' to wrap image(John Ekunola) -->
-          <div class="logo">
-            <img src="./images/logo.png" class="logo" alt="">
-          </div>
           <!-- added a class 'box' to wrap image(John Ekunola) -->
           <form action="l">
             <input type="text" class="first_Name box" placeholder="First Name" required />
             <input type="text" class="last_Name box" placeholder="Last Name" required />
             <input type="email" class="email box" placeholder="Email Address" required />
-            <label for="phone-num">Phone Number:</label>
-            <input type="text" id="phone-num" pattern="(0802|0808|0812|0708|0701|0902|0901|0907)" list="prefixes" required>
+            <div class="phone-container">
+              <input type="number" id="phone-num" class="phone-box" pattern="(0802|0808|0812|0708|0701|0902|0901|0907)" placeholder="0XXXXXXXXXX" list="prefixes" required>
               <datalist id="prefixes">
                 <option value="0802">
                 <option value="0808">
@@ -42,8 +39,9 @@
               </datalist>
 
             <!-- the span is for the network image (qudus, chinaza, Ethel) -->
-             <span id="provider"></span>
+             <img id="provider" class="provider-logo"></img>
             <!-- the span is for the network image (qudus, chinaza, Ethel) -->
+            </div>
             <input type="password" class="password box" placeholder="Password" required />
             <input type="password" class="confirm_password box" placeholder="Confirm Password" required />
           </form>
@@ -54,7 +52,7 @@
         </div>
 
         <!-- added a id 'btn' to wrap image, and s(John Ekunola, Boma 'Ethel' Sim Jaja) -->
-        <button id="btn"><a href="thank you page.html">Create account</a></button>
+        <button type="submit" id="btn" href="thank you page.html">Create account</button>
         <p class="">or</p>
 
         <div class="social_icon">
@@ -62,16 +60,16 @@
           <img src="images/google_img.png" alt="Google Logo" />
           <img src="images/apple_img.png" alt="Apple Logo" />
         </div>
-        <p>already have an account? <a href="thank you page.html">Login</a></p>
+        <p style="font-size: 20px; line-height: 26px;">Already have an account? <a href="#">Login</a></p>
       </section>
     </div>
   </main>
 
-  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <!-- // ============= END DO NOT EDIT ============== // -->
 
   <script src="./index.mjs" type="module"></script>
 
-  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <!-- // ============= END DO NOT EDIT ============== // -->
 </body>
 
 </html>
